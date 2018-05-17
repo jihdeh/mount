@@ -82,7 +82,7 @@ function mount(prefix, app, preserve = false) {
     // does not match prefix at all
     if (!preserve && path.indexOf(prefix) !== 0) return false;
 
-    const newPath = !preserve ? path.replace(prefix, "") || "/" : path;
+    const newPath = !preserve ? path.replace(prefix, "") || "/" : "/";
     if (trailingSlash) return newPath;
 
     // `/mount` does not match `/mountlkjalskjdf`
