@@ -80,7 +80,7 @@ function mount(prefix, app, preserve = false) {
 
   function match(path, preserve) {
     // does not match prefix at all
-    if (path.indexOf(prefix) !== 0) return false;
+    if (!preserve && path.indexOf(prefix) !== 0) return false;
 
     const newPath = !preserve ? path.replace(prefix, "") || "/" : path;
     if (trailingSlash) return newPath;

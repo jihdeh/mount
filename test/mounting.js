@@ -363,7 +363,7 @@ describe("mount(/prefix/*, app, preserve=true)", () => {
 
   app.use(
     mount(
-      "/prefix/soco",
+      "/prefix/*",
       function(ctx) {
         ctx.status = 204;
       },
@@ -371,7 +371,7 @@ describe("mount(/prefix/*, app, preserve=true)", () => {
     )
   );
 
-  it("should match /prefix/soco", function(done) {
+  it("should match /prefix/*", function(done) {
     request(server)
       .get("/prefix/soco")
       .expect(204, done);
